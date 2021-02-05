@@ -2,5 +2,5 @@
 
 ```
 ProjectStartYear: 2021  
-Author:           SeanChang
+Author: SeanChang
 ```
