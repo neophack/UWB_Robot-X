@@ -1,4 +1,7 @@
 # UWB_Robot-X
 
-ProjectStartYear:   2021  
-Author:   SeanChang
+:   2021  
+:   SeanChang
+| ProjectStartYear | 2021 |
+| ------------- |:-------------:|
+| Author           | SeanChang |
