@@ -22,7 +22,9 @@ Author: SeanChang
 
 ○相關檔案:  [ESP32-BU01_UWB_FormulaTest.ino](firmware/ESP32/ESP32-BU01_UWB_FormulaTest/ESP32-BU01_UWB_FormulaTest.ino)  
 
-<img align="center" alt="Banner" width="100%" src="images/20210226_1.png" />
+<img align="center" alt="Banner" width="100%" src="images/20210226_1.png" />  
+<img align="center" alt="Banner" width="100%" src="images/20210226_2.png" />  
+<img align="center" alt="Banner" width="100%" src="images/20210226_3.png" />  
 
 ------
 
