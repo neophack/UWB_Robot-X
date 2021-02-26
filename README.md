@@ -20,7 +20,7 @@ Author: SeanChang
 ○判斷:  
 1)  接下來我應開始查詢有關RST腳位相關的資訊，因為曾經在使用USB_Host_Shield_2.0做手把控制時有印象因為其本身無reset鈕，所以會將ESP8266的RST腳位與其RST腳位相連即可同時重置，希望能使用BU01的RST嘗試看看。  而且這個功能僅是為顯示出數值而已，方便除錯，並不會對變數本身產生影響，所以我決定暫且使用定時器就好，不應耽誤其進度，希望在未來精修階段再做最終處理。  
 
-○相關檔案:  ESP32-BU01_UWB_FormulaTest.ino  
+○相關檔案:  [ESP32-BU01_UWB_FormulaTest.ino](ESP32/ESP32-BU01_UWB_FormulaTest/ESP32-BU01_UWB_FormulaTest.ino)  
 
 
 ------
