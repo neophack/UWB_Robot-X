@@ -15,7 +15,7 @@ Author: SeanChang
 ○特殊進度:  已將三點定位公式程式化，並成功測試其運作狀況(運用GeoGebra繪製模擬圖並驗證其準確度)  
 ○問題:  
 1)  繼上次計時器問題，這次嘗試將計時器替換成計數器，但其無法寫入（Serial.read()）的問題仍無法解決，但我認為這並不是太大的問題，因為透過BU01重置即可結束測距並恢復初始狀態。  
-2)  [自我提醒] 在定義座標變數時，我定義的y1變數出現"'double y1' redeclared as different kind of symbol"的問題，我想是與ESP32開發版本身定義的變數有所衝突，所以更換為y_1即可解決。  
+2)  **[自我提醒] 在定義座標變數時，我定義的y1變數出現"'double y1' redeclared as different kind of symbol"的問題，我想是與ESP32開發版本身定義的變數有所衝突，所以更換為y_1即可解決。**  
 
 ○判斷:  
 1)  接下來我應開始查詢有關RST腳位相關的資訊，因為曾經在使用USB_Host_Shield_2.0做手把控制時有印象因為其本身無reset鈕，所以會將ESP8266的RST腳位與其RST腳位相連即可同時重置，希望能使用BU01的RST嘗試看看。  而且這個功能僅是為顯示出數值而已，方便除錯，並不會對變數本身產生影響，所以我決定暫且使用定時器就好，不應耽誤其進度，希望在未來精修階段再做最終處理。  
@@ -25,6 +25,10 @@ Author: SeanChang
 <img align="center" alt="Banner" width="100%" src="images/20210226_1.png" />  
 <img align="center" alt="Banner" width="100%" src="images/20210226_2.png" />  
 <img align="center" alt="Banner" width="100%" src="images/20210226_3.png" />  
+
+### -2021.02.27-  
+○假日記錄: 今天是二二八連假第一天，在空閑之餘，我突然產生一種想法。一開始使用的MCU為ESP32是考量到功能支援與運算速度的問題，但在一開始其實我寫了兩個程式，一個拿ESP32當中繼另一個是拿ESP8266，其實都可以，但是ESP8266是模擬出來的RX/TX，不太確定之後其中可能產生什麽技術上的問題 **[提醒]模擬的RX/TX與原生的差別？**。  
+○相關檔案:  [ESP32_UWB_Serial.ino](firmware/ESP32_UWB_Serial/ESP32_UWB_Serial.ino)   |   [ESP8266_UWB_Serial.ino](firmware/ESP8266_UWB_Serial/ESP8266_UWB_Serial.ino)  
 
 ------
 
