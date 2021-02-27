@@ -32,6 +32,7 @@ Author: SeanChang
 <img align="center" alt="Banner" width="100%" src="images/20210226_2.png" />  
 <img align="center" alt="Banner" width="100%" src="images/20210226_3.png" />  
 
+##  
 
 ### -2021.02.27-  
 ○假日記錄: 今天是二二八連假第一天，在空閑之餘，我突然產生一種想法。一開始使用的MCU為ESP32是考量到功能支援與運算速度的問題，但在一開始其實我寫了兩個程式，一個拿ESP32當中繼另一個是拿ESP8266，其實都可以，但是ESP8266是模擬出來的RX/TX，不太確定之後其中可能產生什麽技術上的問題 **[提醒]模擬的RX/TX與原生的差別？**。  
