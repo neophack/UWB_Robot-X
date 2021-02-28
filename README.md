@@ -39,7 +39,7 @@ Author: SeanChang
 
 ○之後計劃:  我可能會做兩種版本兼容ESP32及ESP8266，應該會先從ESP8266開始做Prototype是因爲先前我已有之前做的[MBT-Mini_Battlebot_2020](https://github.com/SeanChangX/MBT-Mini_Battlebot_2020)車體，所以可提高一點效率，在測試之後再做修改。  
 
-○特殊現象:  （Serial.read()）之問題消失了可以正常停止測距，暫時不知原因。  
+○特殊現象:  （Serial.read()）之問題消失了可以正常停止測距，暫時不知原因。(2021.02.28臨時更新:我想問題應是出在AT命令本質上輸錯了，可能是之前我動到了我提前預置在序列埠程式中的AT命令格式，**遺漏了[\r\n]**，所以等於其實只是沒收到正確的命令，所以之前產生的假設都可以廢除了，同時也可以**由此推論: 當初想做AT ON/OFF無法讀取的原因也可能是因爲遺漏後方的訊息**)  
 
 ○相關檔案:  [ESP32_UWB_Serial.ino](firmware/ESP32_UWB_Serial/ESP32_UWB_Serial.ino)   |   [ESP8266_UWB_Serial.ino](firmware/ESP8266_UWB_Serial/ESP8266_UWB_Serial.ino)  
 
