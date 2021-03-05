@@ -17,7 +17,7 @@ Author: SeanChang
 ##  
 
 ### -2021.02.26-  
-○特殊進度:  已將三點定位公式程式化，並成功測試其運作狀況(運用GeoGebra繪製模擬圖並驗證其準確度)  
+○今日進度:  已將三點定位公式程式化，並成功測試其運作狀況(運用GeoGebra繪製模擬圖並驗證其準確度)  
 
 ○問題:  
 1)  繼上次計時器問題，這次嘗試將計時器替換成計數器，但其無法寫入（Serial.read()）的問題仍無法解決，但我認為這並不是太大的問題，因為透過BU01重置即可結束測距並恢復初始狀態。  
@@ -42,6 +42,43 @@ Author: SeanChang
 ○特殊現象:  （Serial.read()）之問題消失了可以正常停止測距，暫時不知原因。(2021.02.28臨時更新:我想問題應是出在AT命令本質上輸錯了，可能是之前我動到了我提前預置在序列埠程式中的AT命令格式，**遺漏了[\r\n]**，所以等於其實只是沒收到正確的命令，所以之前產生的假設都可以廢除了，同時也可以**由此推論: 當初想做AT ON/OFF無法讀取的原因也可能是因爲遺漏後方的訊息**)  
 
 ○相關檔案:  [ESP32_UWB_Serial.ino](firmware/ESP32_UWB_Serial/ESP32_UWB_Serial.ino)   |   [ESP8266_UWB_Serial.ino](firmware/ESP8266_UWB_Serial/ESP8266_UWB_Serial.ino)  
+
+##  
+
+### -2021.03.05-  
+○今日進度:  
+1)  成功將BU01測距數值轉換至實際坐標系中，程式編譯無錯誤，但還未實際測試其輸出之(x,y)是否正確。  
+2)  將序列埠輸出數值顯示至串口調試助手中的波形顯示中，方便日後更直觀的DEBUG。  
+
+```C#
+void sendDATA () {
+  Serial.println(an1 + " - " + an2 + " - " + an3);
+  Serial.println("an1=" + an1 + "," + "an2=" + an2 + "," + "an3=" + an3);
+}
+```
+
+○問題與解決方法:  
+1)  繼上次完成純數學方程的程式化後，今天將他放入了[ESP32-BU01_UWB_001.ino](firmware/ESP32/ESP32-BU01_UWB_001/ESP32-BU01_UWB_001.ino)中，並在計算中加入了當時沒加入考慮的UWB Station高度數據(離地一米，降低UWB誤差)，得以獲得真正的坐標數據。但在進行String To Float的時候出現了一個狀況，就是我嘗試使用了 **.toFloat()**但是失敗了，而且其錯誤訊息疑似是有關**物件導向的運算子超載
+(Operator Overloading)**，但是目前我還為接觸過這個所以轉向測試了**atof()**，卻也同樣出現了錯誤，後來爬文得知疑似這個function只適用於char。最後我只好再次觀察並改寫成如下所示的樣子，就奇跡般的成功了，但是雖然解決了問題，卻未完全搞清楚其中原因，希望日後可以再深一步確認其成因。
+```C#
+//.toFloat()  [1st]
+  float an1_f;
+  float an1_f;
+  float an1_f;
+  an1_f = an1.toFloat();
+  an2_f = an2.toFloat();
+  an3_f = an3.toFloat();
+//.toFloat()  [2nd]
+  float an1_f = an1.toFloat();
+  float an2_f = an2.toFloat();
+  float an3_f = an3.toFloat();
+//atof()
+  float an1_f = atof(an1);
+  float an2_f = atof(an2);
+  float an3_f = atof(an3);
+```
+
+○相關檔案:  [ESP32-BU01_UWB_Read.ino](firmware/ESP32/ESP32-BU01_UWB_Read/ESP32-BU01_UWB_Read.ino)   |   [ESP32-BU01_UWB_001.ino](firmware/ESP32/ESP32-BU01_UWB_001/ESP32-BU01_UWB_001.ino)
 
 
 ------
