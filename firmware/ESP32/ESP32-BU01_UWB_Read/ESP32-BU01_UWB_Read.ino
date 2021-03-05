@@ -1,6 +1,6 @@
 /*
          [ UPDATE ]       [ AUTHOR ]
-        =2021.02.05=     =Sean Chang=
+        =2021.03.05=     =Sean Chang=
 */
 #include <SimpleTimer.h>
 #include <HardwareSerial.h>
@@ -49,7 +49,7 @@ void loop() {
 
 
 void sendDATA () {
-  Serial.println(an1 + " - " + an2 + " - " + an3);
+  Serial.println("an1=" + an1 + "," + "an2=" + an2 + "," + "an3=" + an3);
 }
 
 void AN_detect () {
