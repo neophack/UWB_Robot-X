@@ -23,11 +23,11 @@ void setup() {
 
   // configure LED PWM functionalitites
   ledcSetup(pwmChannel, freq, resolution);
-  
+
   // attach the channel to the GPIO to be controlled
   ledcAttachPin(ENA, pwmChannel);
   ledcAttachPin(ENB, pwmChannel);
-  
+
   Serial.begin(115200);
 }
 
@@ -35,7 +35,7 @@ void loop() {
   Serial.println("Moving Forward");
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
-  
+
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
   delay(1000);
@@ -57,7 +57,7 @@ void loop() {
 
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
-  
+
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
   while (dutyCycle <= 255) {
