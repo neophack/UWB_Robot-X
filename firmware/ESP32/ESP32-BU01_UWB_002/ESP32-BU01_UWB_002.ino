@@ -22,6 +22,7 @@ float x1 = 0.00, y_1 = 0.00,
       x2 = 300.00, y2 = 0.00,
       x3 = 0.00, y3 = 300.00;
 float x = 0.00 , y = 0.00;
+float delta = 90; //CM
 String UWB_Data;
 String an1, an2, an3;
 //========================================//
@@ -98,9 +99,9 @@ void loop() {
   an1_f = an1_f * 100;
   an2_f = an2_f * 100;
   an3_f = an3_f * 100;
-  an1_f = sqrt(an1_f * an1_f - 100);
-  an2_f = sqrt(an2_f * an2_f - 100);
-  an3_f = sqrt(an3_f * an3_f - 100);
+  an1_f = sqrt(an1_f * an1_f - (delta * delta));
+  an2_f = sqrt(an2_f * an2_f - (delta * delta));
+  an3_f = sqrt(an3_f * an3_f - delta * delta);
   float a = (-2 * x1 + 2 * x2);
   float b = (-2 * y_1 + 2 * y2);
   float c = (an1_f * an1_f - an2_f * an2_f - x1 * x1 + x2 * x2 - y_1 * y_1 + y2 * y2);
@@ -121,7 +122,7 @@ void loop() {
 
 
 void MOTOR_CONTROL () {
-  if (y < 300) {
+  if (x < 300 && x > 0) {
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, HIGH);
@@ -130,13 +131,13 @@ void MOTOR_CONTROL () {
     digitalWrite(ENB, HIGH);
 
     SerialBT.println("MOTOR ON");
-  } else if (y <= 0) {
+  } else if (x <= 0) {
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, LOW);
     digitalWrite(IN4, LOW);
     SerialBT.println("STOP 0");
-  } else if (y >= 300) {
+  } else if (x >= 300) {
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, LOW);
