@@ -71,11 +71,11 @@ void setup() {
   pinMode(ENB, OUTPUT);
 
   // configure LED PWM functionalitites
-  //ledcSetup(pwmChannel, freq, resolution);
+  ledcSetup(pwmChannel, freq, resolution);
 
   // attach the channel to the GPIO to be controlled
-  //ledcAttachPin(ENA, pwmChannel);
-  //ledcAttachPin(ENB, pwmChannel);
+  ledcAttachPin(ENA, pwmChannel);
+  ledcAttachPin(ENB, pwmChannel);
   //========================================//
 }
 
@@ -99,8 +99,8 @@ void loop() {
   an1_f = an1_f * 100;
   an2_f = an2_f * 100;
   an3_f = an3_f * 100;
-  an1_f = sqrt(an1_f * an1_f - (delta * delta));
-  an2_f = sqrt(an2_f * an2_f - (delta * delta));
+  an1_f = sqrt(an1_f * an1_f - delta * delta);
+  an2_f = sqrt(an2_f * an2_f - delta * delta);
   an3_f = sqrt(an3_f * an3_f - delta * delta);
   float a = (-2 * x1 + 2 * x2);
   float b = (-2 * y_1 + 2 * y2);
@@ -127,8 +127,8 @@ void MOTOR_CONTROL () {
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, HIGH);
     digitalWrite(IN4, LOW);
-    digitalWrite(ENA, HIGH);
-    digitalWrite(ENB, HIGH);
+    //digitalWrite(ENA, HIGH);
+    //digitalWrite(ENB, HIGH);
 
     SerialBT.println("MOTOR ON");
   } else if (x <= 0) {
