@@ -14,8 +14,11 @@ Author: SeanChang
 
 ○相關檔案:  [ESP32-BU01_UWB_Read.ino](firmware/ESP32/ESP32-BU01_UWB_Read/ESP32-BU01_UWB_Read.ino)  
 
-##  
 
+
+
+
+##  
 ### -2021.02.26-  
 ○今日進度:  已將三點定位公式程式化，並成功測試其運作狀況(運用GeoGebra繪製模擬圖並驗證其準確度)  
 
@@ -32,8 +35,11 @@ Author: SeanChang
 <img align="center" alt="Banner" width="100%" src="images/20210226_2.png" />  
 <img align="center" alt="Banner" width="100%" src="images/20210226_3.png" />  
 
-##  
 
+
+
+
+##  
 ### -2021.02.27-  
 ○假日記錄: 今天是二二八連假第一天，在空閑之餘，我突然產生一種想法。一開始使用的MCU為ESP32是考量到功能支援與運算速度的問題，但在一開始其實我寫了兩個程式，一個拿ESP32當中繼另一個是拿ESP8266，其實都可以，但是ESP8266是模擬出來的RX/TX，不太確定之後其中可能產生什麽技術上的問題 **[提醒]模擬的RX/TX與原生的差別？**。  
 
@@ -43,8 +49,11 @@ Author: SeanChang
 
 ○相關檔案:  [ESP32_UWB_Serial.ino](firmware/ESP32_UWB_Serial/ESP32_UWB_Serial.ino)   |   [ESP8266_UWB_Serial.ino](firmware/ESP8266_UWB_Serial/ESP8266_UWB_Serial.ino)  
 
-##  
 
+
+
+
+##  
 ### -2021.03.05-  
 ○今日進度:  
 1)  成功將BU01測距數值轉換至實際坐標系中，程式編譯無錯誤，但還未實際測試其輸出之(x,y)是否正確。  
@@ -78,7 +87,21 @@ void sendDATA () {
   float an3_f = atof(an3);
 ```
 
-○相關檔案:  [ESP32-BU01_UWB_Read.ino](firmware/ESP32/ESP32-BU01_UWB_Read/ESP32-BU01_UWB_Read.ino)   |   [ESP32-BU01_UWB_001.ino](firmware/ESP32/ESP32-BU01_UWB_001/ESP32-BU01_UWB_001.ino)
+○相關檔案:  [ESP32-BU01_UWB_Read.ino](firmware/ESP32/ESP32-BU01_UWB_Read/ESP32-BU01_UWB_Read.ino)   |   [ESP32-BU01_UWB_001.ino](firmware/ESP32/ESP32-BU01_UWB_001/ESP32-BU01_UWB_001.ino)  
+
+
+
+
+
+##  
+### -2021.04.23-  
+○今日進度:  
+1)  重新確認定位公式，發現之前意外留下的錯誤
+
+○相關檔案:  [000.ino](firmware/ESP32/)
+
+
+
 
 
 ------
