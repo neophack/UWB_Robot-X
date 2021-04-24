@@ -126,7 +126,7 @@ void sendDATA () {
   an3_f = sqrt(an3_f * an3_f - delta * delta);
 ```
 
-○相關檔案:  [ESP32-BU01_UWB_FormulaCheck1M.ino](firmware\ESP32\ESP32-BU01_UWB_FormulaCheck1M) | [ESP32-BU01_UWB_002.ino](firmware\ESP32\ESP32-BU01_UWB_002.ino)  
+○相關檔案:  [ESP32-BU01_UWB_FormulaCheck1M.ino](firmware\ESP32\ESP32-BU01_UWB_FormulaCheck1M\ESP32-BU01_UWB_FormulaCheck1M.ino) | [ESP32-BU01_UWB_002.ino](firmware\ESP32\ESP32-BU01_UWB_002\ESP32-BU01_UWB_002.ino)  
 
 
 
