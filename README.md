@@ -97,17 +97,36 @@ void sendDATA () {
 ### -2021.04.23-  
 ○今日進度:  
 1)  重新確認定位公式，發現之前意外留下的錯誤。  
-2)  更換測試車體，確保所使用之開發板固定確實，並參考datasheet嘗試將BU01采平躺方式固定(試驗中)。  
+2)  更換測試車體，確保所使用之開發板固定確實，並參考Datasheet嘗試將BU01采平躺方式固定(試驗中)。  
 3)  已可以無綫控制，用（_18650串聯 | 7.4V-8.4V_）電池供電給L298N馬達驅動板，其馬驅 _5V-OUTPUT_ → ESP32，_ESP32-3.3V_ → BU01，使用BluetoothSerial回傳數據監控。  
+
+-反推距離代入驗算-  
+<img src="images/20210423_3.jpg" width="300" />  
 
 更換前 | 更換後
 :---:|:---:
 <img src="images/20210326.jpg" width="300" /> | <img src="images/20210423_1.jpg" width="300" />  
 
-○問題與解決方法:  
-1)  000
+-DWM1000 Datasheet Page.15-  
+<img src="images/20210423_4.jpg" width="300" />  
 
-○相關檔案:  [000.ino](firmware/ESP32/)
+○問題與解決方法:  
+1)  找到之前未將高度差平方，並將其替換為變數方便日後校正方便。  
+```C#
+  an1_f = sqrt(an1_f * an1_f - 100);
+  an2_f = sqrt(an2_f * an2_f - 100);
+  an3_f = sqrt(an3_f * an3_f - 100);
+```
+```C#
+  //更換為deltaΔ 代表基站（anchor）與標簽（tag）的垂直高度差
+  float delta = 90;     //CM
+  ...
+  an1_f = sqrt(an1_f * an1_f - delta * delta);
+  an2_f = sqrt(an2_f * an2_f - delta * delta);
+  an3_f = sqrt(an3_f * an3_f - delta * delta);
+```
+
+○相關檔案:  [ESP32-BU01_UWB_FormulaCheck1M.ino](firmware\ESP32\ESP32-BU01_UWB_FormulaCheck1M) | [ESP32-BU01_UWB_002.ino](firmware\ESP32\ESP32-BU01_UWB_002.ino)  
 
 
 
