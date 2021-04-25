@@ -125,9 +125,35 @@ void sendDATA () {
   an2_f = sqrt(an2_f * an2_f - delta * delta);
   an3_f = sqrt(an3_f * an3_f - delta * delta);
 ```
->>2)  在實測中發現其準確度會隨停留時間越趨於準確，而且其刷新速率不是很理想。再者，為實現轉向功能，將使用**加速度傳感器**，一旦如此，我一開始設計的AT控制可能受到MCU的設計框架限制，所以下一步將會研究**SPI**或**I2C**接口的工作原理及應用，看看是否可解決問題。
+>>2)  在實測中發現其準確度會隨停留時間越趨於準確，而且其刷新速率不是很理想。再者，為實現轉向功能，將使用**加速度傳感器**，一旦如此，我一開始設計的AT控制可能受到MCU的設計框架限制，所以下一步將會研究**SPI**或**I2C**接口的工作原理及應用，看看是否可解決問題。  
+
+>○下次任務:  
+>>1)  使用有關DWM1000的Libraries進行測試。  
+>>>● [thotro/arduino-dw1000](https://github.com/thotro/arduino-dw1000)  
+>>>● [lewisxhe/arduino-dw1000-ng](https://github.com/lewisxhe/arduino-dw1000-ng)  
 
 ○相關檔案:  [ESP32-BU01_UWB_FormulaCheck1M.ino](firmware/ESP32/ESP32-BU01_UWB_FormulaCheck1M/ESP32-BU01_UWB_FormulaCheck1M.ino) | [ESP32-BU01_UWB_002.ino](firmware/ESP32/ESP32-BU01_UWB_002/ESP32-BU01_UWB_002.ino)  
+
+
+
+
+
+------
+
+## Data sheet
+> ● [BU01](docs/datasheets/bu01_product_specification_zh_v1.0.pdf)  
+  ● [DWM1000](docs/datasheets/dwm1000-datasheet.pdf)  
+
+
+
+
+
+------
+
+## Pinout Data
+<img width="100%" src="images/ESP32_NEW.jpg" />  
+<img width="100%" src="images/ESP32.jpg" />  
+<img width="100%" src="images/ESP8266.jpg" />
 
 
 
