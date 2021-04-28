@@ -141,8 +141,14 @@ void sendDATA () {
 ------
 
 ## Data sheet
-> ● [BU01](docs/datasheets/bu01_product_specification_zh_v1.0.pdf)  
-  ● [DWM1000](docs/datasheets/dwm1000-datasheet.pdf)  
+> ● [BU01](docs/datasheets/nodemcu-bu01.pdf)  
+  ● [DWM1000](docs/datasheets/dwm1000-datasheet-1.pdf)  
+  ● [DW1000](docs/datasheets/dw1000-datasheet-v2.09.pdf) | [USER_Manual](docs/datasheets/dw1000_user_manual_v2.15.pdf)  
+
+  
+
+>1.DWM1000是基於DW1000所開發的模組，所以其多出的字母M代表Module  
+>2.
 
 
 
