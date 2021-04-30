@@ -1,6 +1,6 @@
 /*
          [ UPDATE ]       [ AUTHOR ]
-        =2021.04.23=     =Sean Chang=
+        =2021.04.30=     =Sean Chang=
 */
 #include <SimpleTimer.h>
 #include <HardwareSerial.h>
@@ -22,7 +22,7 @@ float x1 = 0.00, y_1 = 0.00,
       x2 = 300.00, y2 = 0.00,
       x3 = 0.00, y3 = 300.00;
 float x = 0.00 , y = 0.00;
-float delta = 90; //CM
+float delta = 95; //CM
 String UWB_Data;
 String an1, an2, an3;
 //========================================//
